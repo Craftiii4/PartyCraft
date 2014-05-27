@@ -1,0 +1,31 @@
+name: PartyCraft
+main: me.Craftiii4.PartyCraft.PartyCraft
+version: 2.1.0
+website: N/A
+author: Craftiii4
+commands:
+  partycraft:
+    description: Main command
+    aliases: [partyc, pc, pcraft]
+  dropcast:
+    description: Broadcast a message to the server
+    aliases: [partycast, dropc, dc, dcast]
+  dropparty:
+    description: All commands related to drop parties
+    aliases: [dp, dropp, dparty]
+permissions:
+    partycraft.*:
+        description: All permissions
+        children:
+            partycraft.checkupdate: true
+            partycraft.dropparty.*: true
+            partycraft.reload: true
+    partycraft.dropparty.*:
+        description: Access to all colours
+        children:
+            partycraft.dropparty.add: true
+            partycraft.dropparty.cast: true
+            partycraft.dropparty.create: true
+            partycraft.dropparty.settime: true
+            partycraft.dropparty.setvotes: true
+            partycraft.dropparty.stop: true

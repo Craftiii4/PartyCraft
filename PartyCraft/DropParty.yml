@@ -1,0 +1,308 @@
+#############################################################
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#@                       Information                       @#
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#############################################################
+
+# This config files concerns the drop party aspect of PartyCraft
+# Please read what each option does before altering
+
+# Do not change this version
+
+Version: 1.0
+
+#############################################################
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#@                    Drop Party Options                   @#
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#############################################################
+
+# Over what range should items be spread out over?
+# This does not equate to blocks, but the sideways velocity
+# The higher the item is released, the further out it will fall
+
+ItemSpread: 3
+
+# Again, this does not equate to actual time
+# The higher this value, the higher the max upward velocity the item released can have.
+# For this to work efficiently, ensure your area does not have a roof
+
+ReleasedOver: 15
+
+# To reduce lag, you can release the items in 'Waves'. For example if 100 items are in the drop party, and 'Waves' is set to 5, then in each wave 20 items will be released.
+# The Delay between each wave is defined by 'WaveDelay'
+
+Waves: 4
+WaveDelay: 15
+
+# What is the maximum amount of items a single drop party can hold?
+
+MaxItems: 1024
+
+# From what height should the items be released?
+# This is the height in blocks from above the sign location
+
+Height: 32
+
+# How long should be left on the drop party when it first starts?
+# In Seconds
+
+StartingTime: 60
+
+# What should the maximum time be for the drop party?
+# In Seconds
+
+MaxTime: 300
+
+# Should items with unsafe enchants (higher than normal) be allowed in a drop party?
+
+AllowUnsafeEnchants: false
+
+# Should the plugin log details about every drop party?
+
+LogDropParty: true
+
+#############################################################
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#@                         Voting                          @#
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#############################################################
+
+# Enable voting (Votifier)
+
+AllowVote: false
+
+# How many votes are required for a drop party?
+
+VotesRequired: 100
+
+# Should the vote only count if the player is online?
+
+MustBeOnline: false
+
+# Should this plugin override the '/vote' command?
+
+CommandOverRide: true
+
+# If overridden, what should be displayed to the players?
+
+# %votes% = Current vote amount
+# %votesneeded% = Votes needed for a drop party to start
+# %votesleft% = Votes left until drop party starts
+
+CommandResult:
+- '&e----------------------------'
+- ' &6&l&k!!! &aTotal votes this drop&f: &d%votes%&7/&b%votesneeded% &6&l&k!!!'
+- ' &6&l&k!!! &aVotes until next drop&f: &d%votesleft% &6&l&k!!!'
+- '&8--------------'
+- ' &cwww.link1.co.uk'
+- ' &cwww.link2.co.uk'
+- ' &cwww.link3.co.uk'
+- '&e----------------------------'
+
+# What items should start in a vote drop party?
+# Format: ItemID:SubID Amount enchantment-lvl
+# To set an items name use displayname=Custom_Name
+# To add lore use lore=&aThis_is_line1,&bThis_is_line2
+# To add a player head use head=<playername>
+
+# Examples:
+
+# - 397:3 1 head=Notch
+# - 276 1 sharp-5 name=&4&lSword_of_Death
+# - 279 1 effic-4 lore=&6&l&k!!!_&d&lPartyCraft_&6&l&k!!!
+
+StartingItems:
+- 261 4 power-4 flame-1
+- 264 16
+- 265 32
+- 266 64
+- 276 2 sharp-4 fire-2
+- 278 2 fortune-2 unbreaking-2 effic-4
+- 322 8
+- 322:1 2
+- 388 32
+- 383:100 2
+- 384 128
+
+#############################################################
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#@                         Messages                        @#
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#############################################################
+
+# This section allows you to change the messages displayed to user during certain events of the drop party
+
+# The radius is how close the player must be to the drop party
+# e.g. set to 50 and everyone within 50 blocks of the drop party will get the message
+# Set to -1 to send to all players in world
+# Set to -2 to send to all players on server
+
+# What message should be displayed to players when the drop party first starts?
+
+LaunchMessage:
+- '&aA drop party is starting, expect some lag'
+
+LaunchMessageRadius: -2
+
+# What message should be displayed to players when a drop party is created?
+
+StartMessage:
+- '&aDrop party started by &e%playername%.'
+- '&aJoin in with &e/warp <####>'
+
+StartMessageRadius: -2
+
+# When a player adds an item to the drop party, what radius of players should be notified?
+# This is also the radius at which players will be notified about changes to the drop party
+
+ItemAddMessageRadius: 50
+
+# When the vote amount has been reached, what should message should be displayed to the online players?
+
+VoteReachMessage:
+- '&bVote amount has been reached'
+- '&bUse &e/warp <####> &bto join in!'
+
+# When someone votes, what message should be displayed to the online players?
+
+# %votes% = Current vote amount
+# %votesneeded% = Votes needed for a drop party to start
+# %votesleft% = Votes left until drop party starts
+
+VoteNotifyMessage:
+- '&dDrop party starts in &e%votesleft% &dvotes at &e/warp <####>&d!'
+- '&dType &e/vote &dand click the links'
+
+# At what vote amounts (votes left) should players be sent the notify message?
+
+NotifyAt:
+- '90'
+- '80'
+- '70'
+- '60'
+- '50'
+- '40'
+- '30'
+- '20'
+- '10'
+- '5'
+- '4'
+- '3'
+- '2'
+- '1'
+
+#############################################################
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#@                        Item Times                       @#
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#############################################################
+
+# How much time should an item add to the drop party
+# Times are in seconds
+# Format: ItemID:SubID Time
+
+Times:
+- 41 4
+- 42 3
+- 46 1
+- 57 8
+- 133 5
+- 138 6
+- 264 2
+- 265 1
+- 266 1
+- 322 2
+- 322:1 10
+- 388 1
+- 399 4
+- 419 5
+
+#############################################################
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#@                       Banned Items                      @#
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#############################################################
+
+# What items should be banned from the drop party?
+# Format: ItemID:SubID
+
+# Items which are followed by '##' are banned to prevent spam, unban these as you wish
+
+# Items which are followed by '# !!' are banned as they are illegal. Take care when unbanning.
+
+BannedItems:
+- '3' ## Dirt
+- '4' ## Cobble
+- '5' ## Wooden Plank
+- '7' # !! Bedrock !!
+- '8' # !! Water Source !!
+- '9' # !! Water Source !!
+- '10' # !! Lava Source !!
+- '11' # !! Lava Source !!
+- '26' # !! Bed Block !!
+- '34' # !! Piston Head !!
+- '36' # !! Moving Piston !!
+- '51' # !! Fire !!
+- '52' # !! Mob Spawner !!
+- '55' # !! Redstone Wire (Block) !!
+- '59' # !! Crops (Block) !!
+- '62' # !! Furance (Smelting) !!
+- '63' # !! Sign Post !!
+- '64' # !! Wood Door (Block) !!
+- '68' # !! Wall Sign !!
+- '71' # !! Iron Door (Block) !!
+- '74' # !! Glowing Redstone Ore !!
+- '75' # !! Redstone Torch (Off) !!
+- '83' # !! Sugar Cane (Block) !!
+- '90' # !! Portal Block !!
+- '92' # !! Cake Block !!
+- '93' # !! Repeater Block (Off) !!
+- '94' # !! Repeater Block (On) !!
+- '104' # !! Pumpkin Vine !!
+- '105' # !! Melon Vine !!
+- '115' # !! Nether Wart (Block) !!
+- '117' # !! Bewing Stand (Block) !!
+- '118' # !! Cauldron (Block) !!
+- '119' # !! End Portal !!
+- '120' # !! End Portal Frame !!
+- '124' # !! Redstone Lamp (On) !!
+- '127' # !! Cocoa Plant (Block) !!
+- '132' # !! Tripwire (Block) !!
+- '137' # !! Command Block !!
+- '140' # !! Flower Pot (Block) !!
+- '141' # !! Carrot (Crop-Block) !!
+- '142' # !! Potatoes (Crop-Block) !!
+- '144' # !! Head Block !!
+- '149' # !! Comparator (Off) !!
+- '150' # !! Comparator (On) !!
+- '262' ## Arrows
+- '268' ## Wooden Sword
+- '269' ## Wooden Shovel
+- '270' ## Wooden Pickaxe
+- '271' ## Wooden Axe
+- '272' ## Stone Sword
+- '273' ## Stone Shovel
+- '274' ## Stone Pickaxe
+- '275' ## Stone Axe
+- '280' ## Stick
+- '281' ## Empty Bowl
+- '287' ## String
+- '288' ## Feather
+- '289' ## Gunpowder
+- '290' ## Wooden Hoe
+- '291' ## Stone Hoe
+- '318' ## Flint
+- '323' ## Sign
+- '324' ## Wooden Door
+- '331' ## Redstone
+- '332' ## Snowball
+- '333' ## Boat
+- '334' ## Leather
+- '373:0' ## Water Bottle
+- '374' ## Glass Bottle
+- '383:40' # !! Minecart Command Block Spawn Egg !!
+- '383:53' # !! Giant Spawn Egg !!
+- '383:63' # !! Enderdragon Spawn Egg !!
+- '383:64' # !! Wither Spawn Egg !!
+- '422' # !! Minecart Command Block !!

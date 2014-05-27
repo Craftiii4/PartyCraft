@@ -1,0 +1,30 @@
+#############################################################
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#@                       Information                       @#
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#############################################################
+
+# This config files concerns the base features of PartyCraft
+# Please read what each option does before altering
+
+# Do not change this version
+
+Version: 1.0
+
+#############################################################
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#@                         Updates                         @#
+#|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-|#
+#############################################################
+
+# Should the plugin check for updates on boot up
+
+CheckForUpdateOnStart: true
+
+# Should the plugin check for update when ever an admin (player with permission 'partycraft.checkupdate') joins the game
+
+CheckForUpdateOnAdminJoin: true
+
+# Should the plugin alert admins (player with permission 'partycraft.checkupdate') that an update is available when they join the game
+
+AlertAdminsOfUpdate: true
