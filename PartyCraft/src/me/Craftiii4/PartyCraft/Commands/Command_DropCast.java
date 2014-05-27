@@ -31,7 +31,7 @@ public class Command_DropCast implements CommandExecutor {
 		
 		Bukkit.broadcastMessage("§e[§aDropCast§e] §f" + message);
 		
-		return false;
+		return true;
 	}
 
 }
