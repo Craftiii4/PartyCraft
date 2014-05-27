@@ -1,6 +1,5 @@
 package me.Craftiii4.PartyCraft;
 
-import java.lang.reflect.Method;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -114,19 +113,6 @@ public class PartyCraft extends JavaPlugin {
 		
 		return message;
 		
-	}
-	
-    public static Method getClassMethod(Class<?> class1, String method1) {
-    	
-        for(Method method2 : class1.getMethods()) {
-        	
-            if(method2.getName().equals(method1))
-                return method2;
-            
-        }
-        
-        return null;
-    }
-	
+	}	
 
 }
